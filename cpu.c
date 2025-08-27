@@ -6,7 +6,8 @@
 #include <stdlib.h>
 
 
-
+//tüm opcodeları şuradan referans aldık hepsi burada yok ama tammamlandığında hepsi eklencek.
+//https://www.nesdev.org/wiki/Visual6502wiki/6502_all_256_Opcodes
 
 void cpu_handle_nmi(CPU *cpu);
 void cpu_handle_irq(CPU *cpu);
@@ -50,7 +51,7 @@ void cpu_write(CPU *cpu, uint16_t addr, uint8_t value) {
         // ROM genellikle yazılamaz ama bazı mapper’lar destekler
         // Şimdilik ignore
     } else {
-        // Diğer alanlara yazım (şimdilik boş)
+        // Diğer alanlara yazım (şimdilik yapmaylaım)
     }
 }
 
@@ -95,12 +96,12 @@ void cpu_step(CPU *cpu) {
         case 0x09: ora_immediate(cpu); break;
         case 0x49: eor_immediate(cpu); break;
         case 0x10: bpl(cpu); break;
-case 0x30: bmi(cpu); break;
-case 0x50: bvc(cpu); break;
-case 0x70: bvs(cpu); break;
-case 0x90: bcc(cpu); break;
-case 0xB0: bcs(cpu); break;
-case 0xF0: beq(cpu); break;
+        case 0x30: bmi(cpu); break;
+        case 0x50: bvc(cpu); break;
+        case 0x70: bvs(cpu); break;
+        case 0x90: bcc(cpu); break;
+        case 0xB0: bcs(cpu); break;
+        case 0xF0: beq(cpu); break;
 
 
     
@@ -233,3 +234,4 @@ void brk(CPU *cpu) {
     printf("BRK Vector: %04X\n", brk_vector);
     cpu->PC = brk_vector;
 }
+
