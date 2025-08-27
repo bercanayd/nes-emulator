@@ -1,3 +1,7 @@
+//romun hafızaya alınıp işlenmeye başlaması.
+
+
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
@@ -36,3 +40,4 @@ int load_rom(CPU *cpu, const char *filename) {
     fclose(file);
     return 1;
 }
+
