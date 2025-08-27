@@ -14,6 +14,7 @@ if %errorlevel% neq 0 (
 )
 
 echo Calistiriliyor...
-zupzup.exe
+build.exe
 pause
+
 
