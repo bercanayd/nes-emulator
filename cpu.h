@@ -1,3 +1,4 @@
+//tüm opcodelarımız burada dursuyor. tüm işlemler buradan olacak.
 #ifndef CPU_H
 #define CPU_H
 
@@ -5,6 +6,9 @@
 #include <stdint.h>
 
 #include "ppu.h"  // En sonda include et, çünkü yukarıda sadece tanımını kullandın
+
+
+//cpu yapımız
 typedef struct {
     uint16_t PC;         // Program Counter
     uint8_t SP;          // Stack Pointer
@@ -159,3 +163,4 @@ void eor_indirect_y(CPU *cpu);
 void bit_zero_page(CPU *cpu);
 void bit_absolute(CPU *cpu);
 #endif // CPU_H
+
