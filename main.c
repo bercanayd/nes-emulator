@@ -1,4 +1,5 @@
 // main.c
+//açılmak istenen dosya buıradan ayarlanır
 #include <stdio.h>
 #include <string.h>
 #include "cpu.h"
@@ -6,6 +7,8 @@
 #include "rom.h"
 
 int main() {
+
+    //bnuraya açmak isteidğimiz dosyayı griyoruz.
     const char *filename = "games/dosya1.nes";
 
     CPU cpu = {0};
@@ -75,3 +78,4 @@ printf("ROM[0xC5F4] = %02X\n", cpu.memory[0xC5F4]);
     return 0;
 
 }
+
